@@ -20,9 +20,15 @@ app.get("/", function (req, res) {
 });
 
 app.post("/apiURL", function (req, res) {
-  console.log(req.body.apiURL);
+  // console.log(req.body.apiURL);
   apiURL = req.body.apiURL;
   console.log(apiURL);
+  res.redirect('/');
+});
+
+app.post("/resetAPI", function(req, res) {
+  console.log("Resetting API");
+  apiURL = "";
   res.redirect('/');
 });
 
